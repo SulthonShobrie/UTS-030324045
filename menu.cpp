@@ -1,24 +1,54 @@
 #include <iostream>
 #include <conio.h>
-#include <vector>
+
 using namespace std;
 
-
 void dMenu(){
-  system("cls");
-  cout<<"Sort Insertion"<<"\n";       
-  cout<<"1. Memasukkan data"<<"\n";            
-  cout<<"2. Menampilkan data"<<"\n";            
-  cout<<"3. Sorting"<<"\n";           
-  cout<<"4. Sepatah kata"<<"\n";            
-  cout<<"5. Exit"<<"\n";           
-  cout<<"Masukan angka :";        
+    system("cls");
+    cout << "Aplikasi Exchange Sort" << "\n";       
+    cout << "1. Memasukkan data" << "\n";            
+    cout << "2. Menampilkan data" << "\n";            
+    cout << "3. Sorting" << "\n";           
+    cout << "4. Sepatah Kata" << "\n";            
+    cout << "5. Exit" << "\n";           
+    cout << "Masukan angka :";        
 }
 
 void mPertama(string pesan){
-system("cls");
-cout<<"hallo saya adalah menu "<<pesan;
-getch();
+    system("cls");
+    cout << "hallo saya menu " << pesan;
+    getch();
+}
+
+void input(int data[]){
+    system("cls");
+    
+
+    // Meminta input dari pengguna
+    cout << "Masukkan 5 angka: ";
+    for (int i = 0; i < 5; i++) {
+        cin >> data[i];
+    }
+    getch();
+}
+
+void output(int data[]){
+    system("cls");
+    // Menampilkan hasil input
+    cout << "\nData yang anda masukkan adalah:\n";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "Angka ke-" << (i + 1) << ": " << data[i] << endl;
+    }
+    getch();
+}
+
+
+
+void sepatahKata(){
+    system("cls");
+    cout << "Jangan lupa bernafas";
+    getch();
 }
 
 void insertionSort(int data[], int n) {
@@ -42,51 +72,36 @@ void insertionSort(int data[], int n) {
   getch();
 }
 
-void sepatahKata() {
-  system("cls");
-  cout << "Jangan Lupa Bernapas" << endl;
-  getch();
-}
-
 int main() {
-char pl;
-int data[10] = {5, 2, 9, 1, 5, 6, 3, 7, 8, 4};
-
-do
-{
-    dMenu();
-    pl=getch();
-  switch (pl)
-  {
-   case '1':
-    /* code */
-    mPertama("pertama");
-    break;
-   case '2':
-    // mPertama("ke- dua");
-    insertionSort(data, sizeof(data) / sizeof(data[0]));
-    /* code */ 
-    break;  
-   case '3':
-    mPertama("ke- tiga");
-    /* code */
-    break;  
-   case '4':
-    sepatahKata();
-    /* code */
-    break;  
-  case '5':
-    /* code */
-    break;
-  
-  default:
-    system("cls");
-    cout<<"Pilihan Tidak Tersedia";
-    getch();
-    break;
-  }
-
-
-} while (pl!='5');
-  return 0;
+    
+    int data[5];
+    char pl;
+    do {
+        dMenu();
+        pl = getch()
+        switch (pl)
+        {
+        case '1':
+            input(data);
+            break;
+        case '2':
+            output(data);
+            break;  
+        case '3':
+            insertionSort(data, sizeof(data) / sizeof(data[0]));
+            break;  
+        case '4':
+            sepatahKata();
+            break;  
+        case '5':
+            break;
+        default:
+            system("cls");
+            cout << "Pilihan Tidak Tersedia";
+            getch();
+            break;
+        }
+    } while (pl != '5');
+    
+    return 0;
 }
