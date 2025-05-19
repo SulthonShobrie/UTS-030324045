@@ -24,17 +24,19 @@ void input(int data[]){
     system("cls");
     
 
-    // Meminta input dari pengguna
-    cout << "Masukkan 5 angka: ";
+    // Meminta input data dari pengguna
+    cout << "Menu Memasukkan Data\n";
     for (int i = 0; i < 5; i++) {
+        cout << "Masukkan angka ke-" << (i + 1) << ": ";
         cin >> data[i];
     }
+    cout << "\nData berhasil dimasukkan!";
     getch();
 }
 
 void output(int data[]){
     system("cls");
-    // Menampilkan hasil input
+    // Menampilkan hasil input data
     cout << "\nData yang anda masukkan adalah:\n";
     for (int i = 0; i < 5; i++)
     {
@@ -78,7 +80,7 @@ int main() {
     char pl;
     do {
         dMenu();
-        pl = getch()
+        pl = getch();
         switch (pl)
         {
         case '1':
