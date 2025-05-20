@@ -5,7 +5,7 @@ using namespace std;
 
 void dMenu(){
     system("cls");
-    cout << "Aplikasi Exchange Sort" << "\n";       
+    cout << "Aplikasi Insertion Sort" << "\n";       
     cout << "1. Memasukkan data" << "\n";            
     cout << "2. Menampilkan data" << "\n";            
     cout << "3. Sorting" << "\n";           
@@ -49,7 +49,7 @@ void output(int data[]){
 
 void sepatahKata(){
     system("cls");
-    cout << "Jangan lupa bernafas";
+    cout << "Hidup Mahasiswa";
     getch();
 }
 
